@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import FaroukCenterIcon from "../../public/FaroukCenterIcon.svg"
+import FaroukCenterIcon from "/FaroukCenterIcon.svg"
 import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
@@ -66,7 +66,7 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className='w-full flex flex-row bg-transparent justify-between items-center fixed z-[10000] py-2 px-6 bg-[#FFECF1]'>
+    <header className='w-full flex flex-row bg-transparent justify-between items-center fixed z-[10000] py-2 px-6 bg-primary/100'>
                 <div></div>
                <div className='flex flex-row items-center gap-28 transition-all ease-in'>
                <div className='flex flex-row items-center gap-10 transition-all ease-in '>

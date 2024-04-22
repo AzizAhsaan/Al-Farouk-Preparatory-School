@@ -1,10 +1,10 @@
 import React from 'react'
-import CalendarIcon from "../../public/CalendarIcon.svg"
-import SciencetificIcon from "../../public/SciencetificIcon.svg"
-import Pc from "../../public/Pc.png"
-import Polygon from "../../public/Polygon.svg"
-import Rectangle from "../../public/Rectangle.svg"
-import LeftArrow from "../../public/LeftArrow.svg"
+import CalendarIcon from "/CalendarIcon.svg"
+import SciencetificIcon from "/SciencetificIcon.svg"
+import Pc from "/Pc.png"
+import Polygon from "/Polygon.svg"
+import Rectangle from "/Rectangle.svg"
+import LeftArrow from "/LeftArrow.svg"
 
 const SceinteticActivities = () => {
   return (

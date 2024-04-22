@@ -1,7 +1,7 @@
 import React from 'react'
-import ServicesSectionFirstPhoto from "../../public/ServicesSectionFirstPhoto.svg"
-import ServicesSectionSecondPhoto from "../../public/ServicesSectionSecondPhoto.svg"
-import ServicesSectionThirdPhoto from "../../public/ServicesSectionThirdPhoto.svg"
+import ServicesSectionFirstPhoto from "/ServicesSectionFirstPhoto.svg"
+import ServicesSectionSecondPhoto from "/ServicesSectionSecondPhoto.svg"
+import ServicesSectionThirdPhoto from "/ServicesSectionThirdPhoto.svg"
 
 const Services = () => {
   return (

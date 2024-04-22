@@ -1,8 +1,8 @@
 import React from 'react'
-import WasanPicture from "../../public/WasanPicture.png"
-import Vector from "../../public/Vector.svg"
-import SecondLeftArrow from "../../public/SecondLeftArrow.svg"
-import RightArrow from "../../public/RightArrow.svg"
+import WasanPicture from "/WasanPicture.png"
+import Vector from "/Vector.svg"
+import SecondLeftArrow from "/SecondLeftArrow.svg"
+import RightArrow from "/RightArrow.svg"
 
 const ImportantPeople = () => {
   return (

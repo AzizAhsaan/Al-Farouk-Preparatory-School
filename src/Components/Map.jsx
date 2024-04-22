@@ -1,5 +1,5 @@
 import React from 'react'
-import MapIcon from "../../public/MapIcon.svg"
+import MapIcon from "/MapIcon.svg"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import osm from "./osm-providers"

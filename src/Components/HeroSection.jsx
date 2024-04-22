@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
-import HeroSectionGirlPhoto from "../../public/HeroSectionGirlPhoto.png"
-import WasanPicture from "../../public/WasanPicture.png"
+import HeroSectionGirlPhoto from "/HeroSectionGirlPhoto.png"
+import WasanPicture from "/WasanPicture.png"
 
 const HeroSection = () => {
   return (

@@ -1,0 +1,150 @@
+import React,{useEffect,useState} from 'react'
+import FaroukCenterIcon from "/FaroukCenterIcon.svg"
+import phoneIcon from "/phoneIcon.svg"
+import MapPin from "/MapPin.svg"
+import Envelope from "/Envelope.svg"
+import Ring from "/Ring.svg"
+import { Link as ScrollLink } from 'react-scroll';
+
+const Footer = () => {
+  const navigationbar=[
+    {
+      id:1,
+      title:"الموقع",
+      to:"#Map"
+    },
+    {
+      id:2,
+      title:"الأنشطة العلمية",
+      to:"#SceinteticActivities"
+    },
+    {
+      id:3,
+      title:"الفريق",
+      to:"#ImportantPeople"
+      
+    },
+
+    {
+      id:4,
+      title:"الخدمات",
+      to:"#Services"
+      
+    },
+
+    {
+      id:5,
+      title:"الرئيسية",
+      to:"#HeroSection"
+      
+    },
+
+  ]
+  const [selectedId, setSelectedId] = useState(5);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY + 250;
+
+      let activeSectionId = -1;
+
+      navigationbar.forEach((nav) => {
+        const section = document.querySelector(nav.to);
+        if (section instanceof HTMLElement) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (sectionTop <= currentPosition && currentPosition < sectionBottom) {
+            activeSectionId = nav.id;
+          }
+        }
+      });
+
+      setSelectedId(activeSectionId);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  return (
+    <footer className='w-full flex flex-row items-center justify-between px-3 py-10 bg-primary/100'>
+              <div className='flex flex-col items-end text-right gap-2 my-1' >
+          <div className='flex flex-row  items-end gap-2'>
+            <h1 className='lg:text-base text-xs text-[#666666]'>07802246862 - وسن مداح</h1>
+            <img className='w-4 h-4' src={phoneIcon} alt="" />
+
+          </div>
+
+          <div className='flex flex-row items-end gap-2'>
+            <h1 className='lg:text-base text-xs text-[#666666]'>حي الجامعة - شارع المركز</h1>
+            <img className='w-4 h-4' src={MapPin} alt="" />
+
+          </div>
+
+          <div className='flex flex-row items-end gap-2'>
+            <h1 className='lg:text-base text-xs text-[#666666]'>wamalousi@gmail.com</h1>
+            <img className='w-4 h-4' src={Envelope} alt="" />
+
+          </div>
+
+          <div className='flex flex-row items-end gap-2'>
+            <h1 className='lg:text-base text-xs text-[#666666]'>يبدأ الدوام ساعة 8 صباحا و ينتهي ساعة 1 ظهرا</h1>
+            <img className='w-4 h-4' src={Ring} alt="" />
+
+          </div>
+        </div>
+        <div className='flex flex-row items-center gap-10 transition-all ease-in '>
+                {navigationbar.map((navigation) => (
+          <div
+            key={navigation.id}
+            className={`flex flex-row items-center gap-1 cursor-pointer transition-all ease-in  `}
+          >
+            <ScrollLink
+              to={navigation.to.slice(1)}
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={10}
+              onClick={() => setSelectedId(navigation.id)}
+              className={`  ${navigation.id === selectedId ? 'text-primary/700 font-bold text-lg active' : 'text-[#666666] font-bold text-lg'}`}
+            >
+              {navigation.title}
+            </ScrollLink>
+          </div>
+        ))}
+
+                </div>
+        <img className='lg:block hidden' src={FaroukCenterIcon} alt="" />
+
+        <div className='flex flex-col-reverse gap-2 lg:hidden'>
+        <div className='flex flex-row items-center gap-10 transition-all ease-in '>
+                {navigationbar.map((navigation) => (
+          <div
+            key={navigation.id}
+            className={`flex flex-row items-center gap-1 cursor-pointer transition-all ease-in  `}
+          >
+            <ScrollLink
+              to={navigation.to.slice(1)}
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={10}
+              onClick={() => setSelectedId(navigation.id)}
+              className={`  ${navigation.id === selectedId ? 'text-primary/700 font-bold text-lg active' : 'text-[#666666] font-bold text-lg'}`}
+            >
+              {navigation.title}
+            </ScrollLink>
+          </div>
+        ))}
+
+                </div>
+        <img src={FaroukCenterIcon} alt="" />
+        </div>
+    </footer>
+  )
+}
+
+export default Footer
